@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>背景切换</title>
+//<style class="text/css"> 
+//.all {
+	//height: 600px;
+	//width:400px;
+	//margin:0  auto;
+//}
+//</style>
+<link href="焦点图格式.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="script/焦点图格式.js">
+window.onload=function(){
+var imgs =["chun.jpg", "xia.jpg", "qiu.jpg","dong.jpg"];    //（设定想要显示的图片）
+var i = 0;
+var head=document.getElementById("head");    //获取DIV对象
+head.style.background="url(style/img_d/chun.jpg)";       //设置图片的初始图片为该路径的图片
+        function time(){
+               i++;   
+               i=i%4;         // 超过3则取余数，保证循环在0、1、2,3之间
+               head.style.background="url("+imgs[i]+")";     
+        }
+        setInterval("time()",1000);
+        //setInterval()函数，按照指定的周期（按毫秒计）来调用函数或表达式
+}
+//setInterval("time()",50000);
+</script>
+</head>
+<body>
+<div id="playBox">
+  <div class="pre"></div>
+  <div class="next"></div>
+  <div class="smalltitle">
+  <ul class="oUlplay">
+    <li><a href="#/" target="_blank"><img src="style/img_d/chun.jpg"</a></li>
+    <li><a href="#/" target="_blank"><img src="style/img_d/xia.jpg"/></a></li>
+    <li><a href="#/" target="_blank"><img src="style/img_d/qiu.jpg"/></a></li>
+    <li><a href="#/" target="_blank"><img src="style/img_d/dong.jpg"/></a></li>
+  </ul>
+</div>
+</body>
+</html>
